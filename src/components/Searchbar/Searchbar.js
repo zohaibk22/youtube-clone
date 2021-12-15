@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 
 class Searchbar extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            term: '',
+        }
+    };
 
-    state = {term: ''};
-
-    onChangeHandler = (event) =>{
+    onChangeHandler = (event) =>{ 
         let value = event.target.value;
 
         this.setState({term: value})
@@ -13,9 +17,12 @@ class Searchbar extends Component{
 
     onFormSubmit = (event) => {
         event.preventDefault();
+        console.log("INSIDE Searchbar")
 
         //TODO: Make sure we call
         // callback from aprent componet
+
+        this.props.onFormSubmit(this.state.term)
     }
 
     render(){
