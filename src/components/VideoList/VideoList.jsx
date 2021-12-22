@@ -5,7 +5,7 @@ const VideoList = function (props) {
   const { videos } = props;
 
   const renderedVideos = videos.map((video)=> {
-    return <VideoItem video={video} />
+    return <VideoItem key={video.id.videoId} video={video} />
   });
   console.log(videos, "videoes");
   return (
