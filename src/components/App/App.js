@@ -9,7 +9,7 @@ class App extends Component{
         super(props);
         this.state = {
             videos: [],
-            selectedVideo: null
+            selectedVideo: null,
         }
     }
 
@@ -45,8 +45,8 @@ class App extends Component{
             <>
                 <div className= 'ui container'>
                     <Searchbar onFormSubmit={this.onTermSubmit} />
-                    <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
                     <VideoDetail video={this.state.selectedVideo} />
+                    <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
                 </div>
             </>
         )
